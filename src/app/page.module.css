@@ -1,0 +1,45 @@
+.main {
+  margin-inline: 1.5rem;
+  margin-block: 0 2rem;
+}
+
+.contentWrapper {
+  width: 100%;
+  max-width: 100%;
+  margin-inline: auto;
+}
+
+.largeSpacing {
+  margin-block: 4rem 6rem;
+}
+
+.storytelling > p + p {
+  margin-top: 4rem;
+}
+
+@media screen and (min-width: 768px) {
+  .contentWrapper {
+    width: 100%;
+    max-width: 32rem;
+  }
+
+  .storytelling > p + p {
+    margin-top: 6rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .contentWrapper {
+    max-width: 54rem;
+  }
+
+  .largeSpacing {
+    margin-block: 8rem 12rem;
+  }
+}
+
+@media screen and (min-width: 1540px) {
+  .gridWrapper {
+    grid-column: 4 / span 6;
+  }
+}
