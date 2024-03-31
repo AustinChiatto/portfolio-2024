@@ -23,6 +23,7 @@
   border-radius: 1.875rem;
   overflow: hidden;
   pointer-events: all;
+  box-shadow: var(--box-shadow-sm);
 }
 
 .toolbar,
@@ -59,7 +60,7 @@
   padding-block: 1rem 0.5rem;
   border-radius: var(--border-radius-sm);
   box-shadow: var(--box-shadow-sm);
-  transform: translateY(50%);
+  transform: translateY(2rem);
   opacity: 0;
   transition: transform, opacity, 300ms var(--transition-bounce);
   pointer-events: none;

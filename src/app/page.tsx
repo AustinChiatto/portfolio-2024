@@ -33,8 +33,9 @@ export default function Home() {
           <section className={styles.storytelling}>
             <TextScrollFade text={paragraphs} />
             <a
-              href="#"
+              href="mailto:hey@austinchiatto.com"
               className="font-size-xl"
+              target="_blank"
             >
               hey@austinchiatto.com
             </a>

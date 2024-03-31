@@ -8,7 +8,7 @@ export type ContactDataProps = {
 export const contactData = [
   {
     contactLabel: 'Email',
-    contactHref: 'chiattoaustin@gmail.com',
+    contactHref: 'mailto:hey@austinchiatto.com',
     contactIconSrc: '/icons/icon-email.svg',
     contactIconAlt: 'Envelope icon'
   },
