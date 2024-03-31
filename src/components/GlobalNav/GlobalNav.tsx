@@ -1,6 +1,7 @@
 import { ReactEventHandler } from 'react';
 import styles from './global-nav.module.css';
 import Image from 'next/image';
+import { useTheme } from '@/context/ThemeContext';
 
 type globalNavProps = {
   isOpen: boolean;
@@ -8,6 +9,7 @@ type globalNavProps = {
 };
 
 const GlobalNav = ({ isOpen, handleToggleModal }: globalNavProps) => {
+  const { toggleTheme, theme } = useTheme();
   return (
     <nav className={styles.globalNav}>
       <button
@@ -25,6 +27,7 @@ const GlobalNav = ({ isOpen, handleToggleModal }: globalNavProps) => {
               alt="icon of an arrow pointing up"
               width={12}
               height={16}
+              className={theme === 'dark' ? 'icon-dark' : 'icon-light'}
             />
           </button>
         </li>
@@ -32,6 +35,7 @@ const GlobalNav = ({ isOpen, handleToggleModal }: globalNavProps) => {
           <button
             role="button"
             className={styles.themeSwitcher}
+            onClick={toggleTheme}
           ></button>
         </li>
         <li>
@@ -41,6 +45,7 @@ const GlobalNav = ({ isOpen, handleToggleModal }: globalNavProps) => {
               alt="icon of an '@' symbol."
               width={16}
               height={16}
+              className={theme === 'dark' ? 'icon-dark' : 'icon-light'}
             />
           </button>
         </li>

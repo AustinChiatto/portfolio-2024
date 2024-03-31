@@ -6,8 +6,8 @@
   transform: translateX(-50%);
   padding: 0.75rem 1rem;
   border-radius: 1.875rem;
-  border: 1px solid #ededed;
-  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid var(--color-border);
+  background: var(--color-nav-bg);
   backdrop-filter: blur(16px);
   z-index: 10;
 }
@@ -22,8 +22,7 @@
 .dividerVertical {
   width: 0.0625rem;
   height: 1.25rem;
-  background: #ededed;
-  border: 1px solid #ededed;
+  border: 0.0625rem solid var(--color-border);
 }
 
 .themeSwitcher {
