@@ -9,7 +9,7 @@
   /* color - other */
   --color-chip-bg: #ededed;
   --color-border: #ededed;
-  --color-toolbar-bg: rgba(255, 255, 255, 0.8);
+  --color-toolbar-bg: rgba(250, 250, 250, 0.8);
   --color-toolbar-hover: rgba(80, 80, 80, 0.1);
 
   /* border-radius */
@@ -23,6 +23,16 @@
   --font-size-md: clamp(1rem, 3vw, 1.125rem);
   --font-size-base: clamp(1rem, 3vw, 1.0625rem);
   --font-size-sm: clamp(0.625rem, 3vw, 0.75rem);
+
+  /* box-shadow */
+  --box-shadow-sm: 0.1px 0.1px 1.6px -3px rgba(0, 0, 0, 0.028),
+    0.4px 0.4px 3.6px -3px rgba(0, 0, 0, 0.042), 2px 2px 8px -3px rgba(0, 0, 0, 0.07);
+  --box-shadow-lg: 0px 41.778px 33.422px 0px rgba(0, 0, 0, 0.05),
+    0px 22.336px 17.869px 0px rgba(0, 0, 0, 0.04), 0px 12.522px 10.017px 0px rgba(0, 0, 0, 0.04),
+    0px 6.65px 5.32px 0px rgba(0, 0, 0, 0.03), 0px 2.767px 2.214px 0px rgba(0, 0, 0, 0.02);
+
+  /* interactions */
+  --transition-bounce: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 :root:has(.hasModal) {
@@ -33,7 +43,7 @@
   /* color */
   --color-body: #131313;
   /* color - text */
-  --color-text-primary: #d0d0d0;
+  --color-text-primary: #e0e0e0;
   /* color - other */
   --color-chip-bg: #242424;
   --color-border: #242424;
@@ -116,7 +126,7 @@ button:focus {
 }
 
 .icon-dark {
-  filter: invert(100%);
+  filter: invert(90%);
 }
 
 /* text selection */

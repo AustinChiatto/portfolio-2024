@@ -9,7 +9,6 @@ export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleToggleModal = () => {
-    console.log('click');
     setIsOpen(!isOpen);
   };
 

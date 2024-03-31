@@ -14,7 +14,7 @@ export const contactData = [
   },
   {
     contactLabel: 'LinkedIn',
-    contactHref: 'www.linkedin.com/in/austin-chiatto',
+    contactHref: 'https://www.linkedin.com/in/austin-chiatto',
     contactIconSrc: '/icons/icon-linkedin.svg',
     contactIconAlt: 'Icon of the LinkedIn logo'
   },

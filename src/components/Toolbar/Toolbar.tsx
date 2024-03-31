@@ -1,4 +1,4 @@
-import { ReactEventHandler } from 'react';
+import { ReactEventHandler, useEffect, useState } from 'react';
 import styles from './toolbar.module.css';
 import Image from 'next/image';
 import { useTheme } from '@/context/ThemeContext';
@@ -10,10 +10,40 @@ type ToolbarProps = {
 };
 
 const Toolbar = ({ isOpen, handleToggleModal }: ToolbarProps) => {
+  const [isActionOpen, setIsActionOpen] = useState(false);
   const { toggleTheme, theme } = useTheme();
+
+  let mouseOutTimeoutId: ReturnType<typeof setTimeout> | null = null;
+
+  const handleMouseOver = () => {
+    if (mouseOutTimeoutId) {
+      clearTimeout(mouseOutTimeoutId);
+      mouseOutTimeoutId = null;
+    }
+    setIsActionOpen(true);
+  };
+
+  const handleMouseOut = () => {
+    mouseOutTimeoutId = setTimeout(() => {
+      setIsActionOpen(false);
+    }, 300);
+  };
+
+  useEffect(() => {
+    return () => {
+      if (mouseOutTimeoutId) {
+        clearTimeout(mouseOutTimeoutId);
+      }
+    };
+  }, [mouseOutTimeoutId]);
+
   return (
     <nav className={styles.toolbarWrapper}>
-      <div className={styles.toolbarModal}>
+      <div
+        onMouseOver={handleMouseOver}
+        onMouseOut={handleMouseOut}
+        className={`${styles.toolbarModal} ${isActionOpen && styles.isActionOpen}`}
+      >
         <h3>Contact</h3>
         <ul className={styles.contactList}>
           {contactData.map((e, i) => {
@@ -25,6 +55,7 @@ const Toolbar = ({ isOpen, handleToggleModal }: ToolbarProps) => {
                 <a
                   href={e.contactHref}
                   className={styles.contactLink}
+                  target="_blank"
                 >
                   {e.contactLabel}
                   <Image
@@ -32,6 +63,7 @@ const Toolbar = ({ isOpen, handleToggleModal }: ToolbarProps) => {
                     alt={e.contactIconAlt}
                     width={20}
                     height={20}
+                    className={theme === 'dark' ? 'icon-dark' : 'icon-light'}
                   />
                 </a>
               </li>
@@ -43,7 +75,7 @@ const Toolbar = ({ isOpen, handleToggleModal }: ToolbarProps) => {
         <button
           role="button"
           onClick={handleToggleModal}
-          className={styles.toolbarModalBtn}
+          className={styles.toolbarWorkBtn}
         >
           {isOpen ? 'Close' : 'Work'}
         </button>
@@ -68,7 +100,12 @@ const Toolbar = ({ isOpen, handleToggleModal }: ToolbarProps) => {
             ></button>
           </li>
           <li>
-            <button role="button">
+            <button
+              role="button"
+              onMouseOver={handleMouseOver}
+              onClick={handleMouseOver}
+              onMouseOut={handleMouseOut}
+            >
               <Image
                 src={'/icons/icon-at-symbol.svg'}
                 alt="icon of an '@' symbol."
