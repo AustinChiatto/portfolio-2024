@@ -32,11 +32,11 @@
   /* color */
   --color-body: #131313;
   /* color - text */
-  --color-text-primary: #efefef;
+  --color-text-primary: #d0d0d0;
   /* color - other */
   --color-chip-bg: #242424;
-  --color-border: #191919;
-  --color-nav-bg: rgba(10, 10, 10, 0.8);
+  --color-border: #242424;
+  --color-nav-bg: rgba(31, 31, 31, 0.8);
 }
 
 html,
