@@ -29,6 +29,10 @@ const Toolbar = ({ isOpen, handleToggleModal }: ToolbarProps) => {
     }, 300);
   };
 
+  const handleToolbarClick = () => {
+    setIsActionOpen(!isActionOpen);
+  };
+
   useEffect(() => {
     return () => {
       if (mouseOutTimeoutId) {
@@ -82,17 +86,6 @@ const Toolbar = ({ isOpen, handleToggleModal }: ToolbarProps) => {
         <div className={styles.dividerVertical}></div>
         <ul className={styles.toolbarActions}>
           <li>
-            <button role="button">
-              <Image
-                src={'/icons/icon-arrow-up.svg'}
-                alt="icon of an arrow pointing up"
-                width={12}
-                height={16}
-                className={theme === 'dark' ? 'icon-dark' : 'icon-light'}
-              />
-            </button>
-          </li>
-          <li>
             <button
               role="button"
               className={styles.themeSwitcher}
@@ -103,7 +96,7 @@ const Toolbar = ({ isOpen, handleToggleModal }: ToolbarProps) => {
             <button
               role="button"
               onMouseOver={handleMouseOver}
-              onClick={handleMouseOver}
+              onClick={handleToolbarClick}
               onMouseOut={handleMouseOut}
             >
               <Image
