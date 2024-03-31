@@ -18,13 +18,35 @@
 
 .modal {
   position: relative;
-  width: 100%;
+  max-width: 100%;
   min-height: 100lvh;
-  background: #fff;
+  max-height: 100lvh;
+  background: var(--color-body);
   transform: translateY(100%);
   transition: transform, 600ms ease;
+  overflow-y: scroll;
+  padding-block: 4rem;
+}
+
+.projectList {
+  width: 100%;
+  max-width: 100%;
+  margin-inline: auto;
 }
 
 .modal.isOpen {
   transform: translateY(0);
+}
+
+@media screen and (min-width: 768px) {
+  .projectList {
+    width: 100%;
+    max-width: 32rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .projectList {
+    max-width: 54rem;
+  }
 }

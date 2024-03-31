@@ -6,6 +6,9 @@
   /* color - text */
   --color-text-primary: #000;
   --color-text-secondary: #c8c8c8;
+  /* color - other */
+  --color-chip-bg: #ededed;
+  --color-border: #ededed;
 
   /* border-radius */
   --border-radius-sm: 0.5rem;
@@ -40,18 +43,18 @@ h4,
 h5,
 h6,
 p {
-  font-weight: 450;
+  font-weight: 400;
 }
 
 p {
   font-style: normal;
-
+  line-height: 1.4;
   letter-spacing: 0.00038rem;
-  line-height: 1.5rem;
 }
 
 .font-size-xl {
   font-size: var(--font-size-xl);
+  font-weight: 450;
   line-height: 180%;
 }
 
