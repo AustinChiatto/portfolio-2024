@@ -26,6 +26,7 @@
   transition: transform, 600ms ease;
   overflow-y: scroll;
   padding-block: 4rem;
+  padding-inline: 2rem;
 }
 
 .projectList {
