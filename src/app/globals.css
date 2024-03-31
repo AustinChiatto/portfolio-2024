@@ -60,9 +60,9 @@ p {
 
 /* interactive elements */
 a {
-  color: #2d7bf7;
+  color: var(--color-text-primary);
   font-weight: inherit;
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 a:hover {

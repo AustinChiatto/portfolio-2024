@@ -1,6 +1,5 @@
 .main {
   margin-inline: 1.5rem;
-  margin-block: 0 4rem;
 }
 
 .contentWrapper {
@@ -15,6 +14,10 @@
 
 .storytelling > p + p {
   margin-top: 4rem;
+}
+
+.storytelling {
+  padding-bottom: 15lvh;
 }
 
 @media screen and (min-width: 768px) {
@@ -34,7 +37,7 @@
   }
 
   .contentWrapper {
-    max-width: 54rem;
+    max-width: 48rem;
   }
 
   .largeSpacing {
@@ -43,7 +46,7 @@
 }
 
 @media screen and (min-width: 1540px) {
-  .gridWrapper {
-    grid-column: 4 / span 6;
+  .contentWrapper {
+    max-width: 54rem;
   }
 }
