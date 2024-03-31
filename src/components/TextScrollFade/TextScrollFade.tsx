@@ -33,14 +33,14 @@ const TextWithScrollFade = ({ text }: { text: string }) => {
 
   return (
     <>
-      {paragraphs.map((paragraph, i) => {
+      {paragraphs.map((paragraph, pIndex) => {
         // split paragraph into words to handle individual opacity
         const words = paragraph.split(' ');
-        const paragraphWordStartIndex = paragraphs.slice(0, i).join(' ').split(' ').length;
+        const paragraphWordStartIndex = paragraphs.slice(0, pIndex).join(' ').split(' ').length;
 
         return (
           <p
-            key={`paragraph-${i}`}
+            key={`paragraph-${pIndex}`}
             className={`font-size-xl`}
           >
             {words.map((word, wIndex) => {
@@ -48,7 +48,7 @@ const TextWithScrollFade = ({ text }: { text: string }) => {
               const opacity = calculateOpacity(globalWordIndex + 1);
               return (
                 <span
-                  key={`word-${i}-${wIndex}`}
+                  key={`word-${pIndex}-${wIndex}`}
                   style={{ opacity, transition: 'opacity 0.5s ease' }}
                 >
                   {word}{' '}

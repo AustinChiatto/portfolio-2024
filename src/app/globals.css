@@ -5,11 +5,12 @@
   --color-body: #fff;
   /* color - text */
   --color-text-primary: #000;
-  --color-text-secondary: #c8c8c8;
+  --color-text-secondary: #6c6c6c;
   /* color - other */
   --color-chip-bg: #ededed;
   --color-border: #ededed;
-  --color-nav-bg: rgba(255, 255, 255, 0.8);
+  --color-toolbar-bg: rgba(255, 255, 255, 0.8);
+  --color-toolbar-hover: rgba(80, 80, 80, 0.1);
 
   /* border-radius */
   --border-radius-sm: 0.5rem;
@@ -36,7 +37,8 @@
   /* color - other */
   --color-chip-bg: #242424;
   --color-border: #242424;
-  --color-nav-bg: rgba(31, 31, 31, 0.8);
+  --color-toolbar-bg: rgba(31, 31, 31, 0.8);
+  --color-toolbar-hover: rgba(80, 80, 80, 0.25);
 }
 
 html,

@@ -1,8 +1,8 @@
 'use client';
-import GlobalNav from '@/components/GlobalNav/GlobalNav';
+import Toolbar from '@/components/Toolbar/Toolbar';
 import styles from './page.module.css';
 import Modal from '@/components/Modal/Modal';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import TextScrollFade from '@/components/TextScrollFade/TextScrollFade';
 
 export default function Home() {
@@ -13,12 +13,6 @@ export default function Home() {
     setIsOpen(!isOpen);
   };
 
-  // todo: highlight words on scroll
-  // split text into array of words
-  // get total value of scroll from 0 to 100
-  // divide 100 by total number of words in the array
-  // each time that value is scrolled, highlight the next word in the array
-
   const paragraphs = `I design and develop full-stack products for the web, utilizing the JavaScript ecosystem to create efficient and intuitive ways to interact with data in a browser.
     I am driven by curiosity, enjoy solving problems, and love engaging with projects that teach me something new.
     I'm currently working on implementing new features for my spaceflight tracker, Apogee, and developing a small repo of flexible UI.
@@ -27,7 +21,7 @@ export default function Home() {
 
   return (
     <>
-      <GlobalNav
+      <Toolbar
         handleToggleModal={handleToggleModal}
         isOpen={isOpen}
       />
