@@ -6,12 +6,10 @@ const Project = ({
   projectName,
   projectDesc,
   projectStack,
-  projectRole,
   projectUrl,
   projectRepoUrl,
   projectImageUrl,
-  projectImageAlt,
-  projectImageBase64
+  projectImageAlt
 }: projectProps) => {
   return (
     <li className={styles.project}>
@@ -31,20 +29,28 @@ const Project = ({
           })}
         </ul>
       </div>
-      <a
-        href={projectUrl}
-        className={styles.projectShowcase}
-      >
-        <div className={styles.projectMedia}>
-          <Image
-            src={projectImageUrl}
-            alt={projectImageAlt}
-            sizes="33vw"
-            fill
-            style={{ objectFit: 'cover' }}
-          />
-        </div>
-      </a>
+      <div className={styles.container}>
+        <a
+          href={projectRepoUrl}
+          className={styles.repoChip}
+        >
+          Code
+        </a>
+        <a
+          href={projectUrl}
+          // className={styles.projectShowcase}
+        >
+          <div className={styles.projectMedia}>
+            <Image
+              src={projectImageUrl}
+              alt={projectImageAlt}
+              sizes="33vw"
+              fill
+              style={{ objectFit: 'cover' }}
+            />
+          </div>
+        </a>
+      </div>
     </li>
   );
 };

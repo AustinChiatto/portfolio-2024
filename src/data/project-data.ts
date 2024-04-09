@@ -10,6 +10,8 @@ export type projectProps = {
   projectImageBase64: string;
 };
 
+// todo: add alt's and base64
+
 export const projects = [
   {
     projectName: 'Apogee',

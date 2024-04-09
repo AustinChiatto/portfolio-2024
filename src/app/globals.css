@@ -3,6 +3,7 @@
   --color-white: #fff;
   --color-black: #000;
   --color-body: #fff;
+  --color-body-rgb: (255, 255, 255);
   /* color - text */
   --color-text-primary: #000;
   --color-text-secondary: #6c6c6c;
@@ -42,6 +43,7 @@
 [data-theme='dark'] {
   /* color */
   --color-body: #131313;
+  --color-body-rgb: (19, 19, 19);
   /* color - text */
   --color-text-primary: #e0e0e0;
   /* color - other */

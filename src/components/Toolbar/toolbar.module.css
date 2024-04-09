@@ -60,7 +60,7 @@
   padding-block: 1rem 0.5rem;
   border-radius: var(--border-radius-sm);
   box-shadow: var(--box-shadow-sm);
-  transform: translateY(2rem);
+  transform: translateY(0.5rem);
   opacity: 0;
   transition: transform, opacity, 300ms var(--transition-bounce);
   pointer-events: none;
