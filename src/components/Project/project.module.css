@@ -8,6 +8,7 @@
 }
 
 .projectOverview > h3 {
+  font-size: 1.0625rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
 }
@@ -42,10 +43,12 @@
 
 .repoChip {
   display: none;
+  transition: background 100ms ease-in-out;
 }
 
 .repoChip:hover {
   text-decoration: none;
+  background-color: var(--color-chip-bg);
 }
 
 .projectMedia {

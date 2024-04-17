@@ -36,10 +36,7 @@ const Project = ({
         >
           Code
         </a>
-        <a
-          href={projectUrl}
-          // className={styles.projectShowcase}
-        >
+        <a href={projectUrl}>
           <div className={styles.projectMedia}>
             <Image
               src={projectImageUrl}
