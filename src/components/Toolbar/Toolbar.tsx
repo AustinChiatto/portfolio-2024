@@ -79,18 +79,20 @@ const Toolbar = ({ isOpen, handleToggleModal }: ToolbarProps) => {
         <button
           role="button"
           onClick={handleToggleModal}
-          className={styles.toolbarWorkBtn}
+          className={styles.toolbarText}
         >
           {isOpen ? 'Close' : 'Work'}
         </button>
-        <div className={styles.dividerVertical}></div>
-        <ul className={styles.toolbarActions}>
+        <div className={styles.dividerVertical} />
+        <ul className={styles.toolbarActionList}>
           <li>
             <button
               role="button"
-              className={styles.themeSwitcher}
+              className={styles.toolbarAction}
               onClick={toggleTheme}
-            ></button>
+            >
+              <div className={styles.themeSwitcher}></div>
+            </button>
           </li>
           <li>
             <button
@@ -98,6 +100,7 @@ const Toolbar = ({ isOpen, handleToggleModal }: ToolbarProps) => {
               onMouseOver={handleMouseOver}
               onClick={handleToolbarClick}
               onMouseOut={handleMouseOut}
+              className={styles.toolbarAction}
             >
               <Image
                 src={'/icons/icon-at-symbol.svg'}

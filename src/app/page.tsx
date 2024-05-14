@@ -28,7 +28,7 @@ export default function Home() {
         <h1 className="visuallyHidden">Austin Chiatto - Full Stack developer based in Vancouver</h1>
         <div className={styles.contentWrapper}>
           <div className={styles.largeSpacing}>
-            <h3>Nice to meet you. I&apos;m austin.</h3>
+            <h3>Nice to meet you. I&apos;m Austin.</h3>
           </div>
           <section className={styles.storytelling}>
             <TextScrollFade text={paragraphs} />
