@@ -14,7 +14,7 @@ export default function Home() {
 
   const paragraphs = `I design and develop full-stack products for the web, utilizing the JavaScript ecosystem to create efficient and intuitive ways to interact with data in a browser.
     I am driven by curiosity, enjoy solving problems, and love engaging with projects that teach me something new.
-    I'm currently working on implementing new features for my spaceflight tracker, Apogee, and developing a small repo of flexible UI.
+    I'm currently working as a junior front end developer at Forge and Smith, and implementing new features for my spaceflight tracker, Apogee.
     I live on the rainy west coast of Canada, where you can find me immersed in a project, tinkering with retro games, or hanging out with my cat, Max.
     I would love to start a conversation.`;
 

@@ -1,3 +1,4 @@
+import { relative } from 'path';
 import React, { useEffect, useState } from 'react';
 
 const TextWithScrollFade = ({ text }: { text: string }) => {
@@ -46,10 +47,16 @@ const TextWithScrollFade = ({ text }: { text: string }) => {
             {words.map((word, wIndex) => {
               const globalWordIndex = paragraphWordStartIndex + wIndex;
               const opacity = calculateOpacity(globalWordIndex + 1);
+              const top = opacity === 1 ? '0' : '0.125rem';
               return (
                 <span
                   key={`word-${pIndex}-${wIndex}`}
-                  style={{ opacity, transition: 'opacity 0.5s ease' }}
+                  style={{
+                    opacity,
+                    top,
+                    transition: 'opacity 0.5s ease, top 0.25s linear',
+                    position: 'relative'
+                  }}
                 >
                   {word}{' '}
                 </span>
