@@ -12,11 +12,13 @@ export default function Home() {
     setIsOpen(!isOpen);
   };
 
-  const paragraphs = `I design and develop full-stack products for the web, utilizing the JavaScript ecosystem to create efficient and intuitive ways to interact with data in a browser.
+  const paragraphs = `utilizing the JavaScript ecosystem to create efficient and intuitive ways to interact with data in a browser.
     I am driven by curiosity, enjoy solving problems, and love engaging with projects that teach me something new.
-    I'm currently working as a junior front end developer at Forge and Smith, and implementing new features for my spaceflight tracker, Apogee.
+    I'm currently working as a junior front-end developer at Forge and Smith, and in my spare time, I've been implementing new features into my spaceflight tracker, Apogee.
     I live on the rainy west coast of Canada, where you can find me immersed in a project, tinkering with retro games, or hanging out with my cat, Max.
     I would love to start a conversation.`;
+
+  const email = `hey@austinchiatto.com`;
 
   return (
     <>
@@ -31,13 +33,16 @@ export default function Home() {
             <h3>Nice to meet you. I&apos;m Austin.</h3>
           </div>
           <section className={styles.storytelling}>
-            <TextScrollFade text={paragraphs} />
+            <TextScrollFade
+              text={paragraphs}
+              prependIgnore={'I design and develop full-stack products for the web, '}
+            />
             <a
               href="mailto:hey@austinchiatto.com"
-              className="font-size-xl"
+              className={`font-size-xl ${styles.linkLarge}`}
               target="_blank"
             >
-              hey@austinchiatto.com
+              <TextScrollFade text={email} />
             </a>
           </section>
         </div>

@@ -17,7 +17,10 @@
 }
 
 .storytelling {
-  padding-bottom: 15lvh;
+  padding-bottom: 30lvh;
+}
+
+.linkLarge:hover {
 }
 
 @media screen and (min-width: 768px) {

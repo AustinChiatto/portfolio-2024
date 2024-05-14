@@ -1,7 +1,6 @@
-import { relative } from 'path';
 import React, { useEffect, useState } from 'react';
 
-const TextWithScrollFade = ({ text }: { text: string }) => {
+const TextWithScrollFade = ({ text, prependIgnore }: { text: string; prependIgnore?: string }) => {
   const [scrollPercentage, setScrollPercentage] = useState(0);
 
   useEffect(() => {
@@ -11,7 +10,8 @@ const TextWithScrollFade = ({ text }: { text: string }) => {
       const currentScrollDepth = window.scrollY;
       // translate current scroll into a percentage of total scroll
       const scrollDepthPercentage = (currentScrollDepth / totalScrollHeight) * 100;
-      setScrollPercentage(scrollDepthPercentage);
+      const maxDepth = Math.min((scrollDepthPercentage / 95) * 100, 100);
+      setScrollPercentage(maxDepth);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -28,8 +28,8 @@ const TextWithScrollFade = ({ text }: { text: string }) => {
   // define opacity calculation function
   const calculateOpacity = (wordIndex: number): number => {
     const totalWords = allWords.length;
-    const percentPerWord = 100 / (totalWords - 10);
-    return scrollPercentage >= percentPerWord * (wordIndex - 10) ? 1 : 0.25;
+    const percentPerWord = 100 / totalWords;
+    return scrollPercentage >= percentPerWord * wordIndex ? 1 : 0.25;
   };
 
   return (
@@ -44,9 +44,10 @@ const TextWithScrollFade = ({ text }: { text: string }) => {
             key={`paragraph-${pIndex}`}
             className={`font-size-xl`}
           >
+            {pIndex == 0 && prependIgnore && <span>{prependIgnore}</span>}
             {words.map((word, wIndex) => {
               const globalWordIndex = paragraphWordStartIndex + wIndex;
-              const opacity = calculateOpacity(globalWordIndex + 1);
+              const opacity = calculateOpacity(globalWordIndex);
               const top = opacity === 1 ? '0' : '0.125rem';
               return (
                 <span

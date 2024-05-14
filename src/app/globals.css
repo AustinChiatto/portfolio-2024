@@ -88,11 +88,7 @@ p {
 a {
   color: var(--color-text-primary);
   font-weight: inherit;
-  text-decoration: underline;
-}
-
-a:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 button {
