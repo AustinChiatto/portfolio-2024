@@ -1,6 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React, { ReactEventHandler, useEffect, useState } from 'react';
 
-const TextWithScrollFade = ({ text, prependIgnore }: { text: string; prependIgnore?: string }) => {
+const TextWithScrollFade = ({
+  text,
+  prependIgnore,
+  className,
+  onMouseMove
+}: {
+  text: string;
+  prependIgnore?: string;
+  className?: string;
+  onMouseMove?: ReactEventHandler;
+}) => {
   const [scrollPercentage, setScrollPercentage] = useState(0);
 
   useEffect(() => {
@@ -58,6 +68,8 @@ const TextWithScrollFade = ({ text, prependIgnore }: { text: string; prependIgno
                     transition: 'opacity 0.5s ease, top 0.25s linear',
                     position: 'relative'
                   }}
+                  className={className}
+                  onMouseMove={onMouseMove}
                 >
                   {word}{' '}
                 </span>
