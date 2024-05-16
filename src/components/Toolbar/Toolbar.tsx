@@ -12,6 +12,7 @@ type ToolbarProps = {
 const Toolbar = ({ isOpen, handleToggleModal }: ToolbarProps) => {
   const [isActionOpen, setIsActionOpen] = useState(false);
   const { toggleTheme, theme } = useTheme();
+  const [contactHeader, setContactHeader] = useState(['Contact Me']);
 
   let mouseOutTimeoutId: ReturnType<typeof setTimeout> | null = null;
 
@@ -26,7 +27,7 @@ const Toolbar = ({ isOpen, handleToggleModal }: ToolbarProps) => {
   const handleMouseOut = () => {
     mouseOutTimeoutId = setTimeout(() => {
       setIsActionOpen(false);
-    }, 300);
+    }, 100);
   };
 
   const handleToolbarClick = () => {
@@ -41,40 +42,55 @@ const Toolbar = ({ isOpen, handleToggleModal }: ToolbarProps) => {
     };
   }, [mouseOutTimeoutId]);
 
+  const handleContactHeader = (e: Array<string>) => {
+    setContactHeader(e);
+  };
+
+  const ContactHoverCard = (
+    <div
+      onMouseOver={handleMouseOver}
+      onMouseOut={handleMouseOut}
+      className={`${styles.toolbarModal} ${isActionOpen && styles.isActionOpen}`}
+    >
+      <div className={styles.hoverCardHeader}>
+        <h3 className={contactHeader[1] ? styles.contactHeading : styles.contactSubheading}>
+          {contactHeader[0]}
+        </h3>
+        {contactHeader[1] && <h4 className={styles.contactSubheading}>{contactHeader[1]}</h4>}
+      </div>
+      <ul className={styles.contactList}>
+        {contactData.map((e, i) => {
+          return (
+            <li
+              key={i}
+              className={styles.contactItem}
+              onMouseOver={() => handleContactHeader(e.contactTags)}
+              onMouseOut={() => handleContactHeader(['Contact Me'])}
+            >
+              <a
+                href={e.contactHref}
+                className={styles.contactLink}
+                target="_blank"
+              >
+                {e.contactLabel}
+                <Image
+                  src={e.contactIconSrc}
+                  alt={e.contactIconAlt}
+                  width={18}
+                  height={18}
+                  className={theme === 'dark' ? 'icon-dark' : 'icon-light'}
+                />
+              </a>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  );
+
   return (
     <nav className={styles.toolbarWrapper}>
-      <div
-        onMouseOver={handleMouseOver}
-        onMouseOut={handleMouseOut}
-        className={`${styles.toolbarModal} ${isActionOpen && styles.isActionOpen}`}
-      >
-        <h3>Contact</h3>
-        <ul className={styles.contactList}>
-          {contactData.map((e, i) => {
-            return (
-              <li
-                key={i}
-                className={styles.contactItem}
-              >
-                <a
-                  href={e.contactHref}
-                  className={styles.contactLink}
-                  target="_blank"
-                >
-                  {e.contactLabel}
-                  <Image
-                    src={e.contactIconSrc}
-                    alt={e.contactIconAlt}
-                    width={20}
-                    height={20}
-                    className={theme === 'dark' ? 'icon-dark' : 'icon-light'}
-                  />
-                </a>
-              </li>
-            );
-          })}
-        </ul>
-      </div>
+      {ContactHoverCard}
       <div className={styles.toolbar}>
         <button
           role="button"
@@ -88,27 +104,27 @@ const Toolbar = ({ isOpen, handleToggleModal }: ToolbarProps) => {
           <li>
             <button
               role="button"
-              className={styles.toolbarAction}
-              onClick={toggleTheme}
-            >
-              <div className={styles.themeSwitcher}></div>
-            </button>
-          </li>
-          <li>
-            <button
-              role="button"
               onMouseOver={handleMouseOver}
               onClick={handleToolbarClick}
               onMouseOut={handleMouseOut}
               className={styles.toolbarAction}
             >
               <Image
-                src={'/icons/icon-at-symbol.svg'}
+                src={'/icons/icon-email.svg'}
                 alt="icon of an '@' symbol."
-                width={16}
+                width={18}
                 height={16}
                 className={theme === 'dark' ? 'icon-dark' : 'icon-light'}
               />
+            </button>
+          </li>
+          <li>
+            <button
+              role="button"
+              className={styles.toolbarAction}
+              onClick={toggleTheme}
+            >
+              <div className={styles.themeSwitcher}></div>
             </button>
           </li>
         </ul>

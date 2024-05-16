@@ -32,14 +32,38 @@
   align-items: center;
 }
 
+.divider,
+.dividerVertical {
+  background: var(--color-border);
+}
+
+.divider {
+  width: calc(100% - 1.5rem);
+  height: 0.0625rem;
+  margin-inline: auto;
+  margin-block: 0.5rem;
+}
+
 .dividerVertical {
   width: 0.0625rem;
   height: 1.25rem;
-  border: 0.0625rem solid var(--color-border);
 }
 
 .toolbarAction {
   padding: 0.75rem 0.5rem;
+  min-width: 2.5rem;
+  height: 2.5rem;
+}
+
+.toolbarAction > *,
+.toolbarText {
+  transition: opacity 200ms linear;
+  opacity: 0.7;
+}
+
+.toolbarAction:hover > *,
+.toolbarText:hover {
+  opacity: 1;
 }
 
 ul li:nth-of-type(1) .toolbarAction {
@@ -69,6 +93,7 @@ ul li:nth-of-type(2) .toolbarAction {
   transform: translateY(0.5rem);
   opacity: 0;
   transition: transform, opacity, 300ms var(--transition-bounce);
+  transition-delay: 300ms;
   pointer-events: none;
 }
 
@@ -78,26 +103,34 @@ ul li:nth-of-type(2) .toolbarAction {
   pointer-events: all;
 }
 
-.toolbarModal > h3 {
-  color: var(--color-text-secondary);
+.contactHeading,
+.contactSubheading {
+  color: var(--color-text-primary);
   font-weight: 500;
   font-size: var(--font-size-sm);
-  padding-left: 1rem;
+  padding-inline: 1rem;
+  padding-bottom: 0.5rem;
+}
+
+.contactSubheading {
+  color: var(--color-text-secondary);
 }
 
 .contactList {
   display: grid;
-  margin-top: 0.5rem;
   width: 12rem;
+  padding-inline: 0.5rem;
+  padding-top: 0.25rem;
 }
 
 .contactLink {
-  padding: 0.5rem 1rem;
+  padding: 0.5rem;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   text-decoration: none;
+  border-radius: var(--border-radius-sm);
 }
 
 .contactLink:hover {
