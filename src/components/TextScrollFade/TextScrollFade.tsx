@@ -66,7 +66,8 @@ const TextWithScrollFade = ({
                     opacity,
                     top,
                     transition: 'opacity 0.5s ease, top 0.25s linear',
-                    position: 'relative'
+                    position: 'relative',
+                    textWrap: 'pretty'
                   }}
                   className={className}
                   onMouseMove={onMouseMove}

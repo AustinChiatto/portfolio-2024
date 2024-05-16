@@ -1,0 +1,40 @@
+.landingCTA .cta {
+  padding-bottom: 0.375rem;
+  transition: border-bottom 0.5s ease-in-out;
+  position: relative;
+}
+
+.landingCTA > p {
+  display: block;
+  width: fit-content;
+  overflow: hidden;
+}
+
+.landingCTA .cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding-bottom: 0.375rem;
+  border-bottom: 0.125rem solid var(--color-landing-cta-border);
+}
+
+.landingCTA .cta::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: var(--borderSparkle-left);
+  width: 40%;
+  height: 100%;
+  padding-bottom: 0.375rem;
+  border-image: var(--color-landing-cta-border-image);
+  border-image-width: 1px;
+  border-image-slice: 0% 0% 10%;
+  opacity: 0;
+  transition: opacity 0.24s linear, left 0.4s var(--transition-bounce);
+}
+
+.landingCTA .cta:hover::after {
+  opacity: 0.75;
+}
