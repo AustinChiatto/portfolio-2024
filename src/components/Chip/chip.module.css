@@ -4,6 +4,6 @@
   border-radius: var(--border-radius-xs);
   padding: 0.25rem 0.5rem;
   /* background: #242424; */
-  background: var(--color-chip-bg);
+  background: var(--color-elem-primary);
   font-size: var(--font-size-xs);
 }

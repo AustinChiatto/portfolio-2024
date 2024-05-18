@@ -4,14 +4,14 @@
   right: 0;
   bottom: 0;
   left: 0;
-  background: rgba(var(--color-body-rgb), 0);
+  background: rgba(var(--color-site-primary), 0);
   backdrop-filter: blur(0);
   pointer-events: none;
   transition: background, backdrop-filter, 400ms ease;
 }
 
 .modalWrapper.isOpen {
-  background: rgba(var(--color-body-rgb), 1);
+  background: rgba(var(--color-site-primary), 1);
   backdrop-filter: blur(0.75rem);
   pointer-events: all;
 }
@@ -23,7 +23,7 @@
   max-height: 100lvh;
   overflow-y: scroll;
   padding: 10rem 2rem;
-  background: var(--color-body);
+  background: var(--color-site-primary);
   transform: translateY(100%);
   transition: transform, 600ms ease;
 }

@@ -56,7 +56,7 @@
   }
 
   .projectContainer {
-    background: var(--color-project-container);
+    background: var(--color-elem-secondary);
     display: grid;
     place-items: center;
     aspect-ratio: 1.5/1;
@@ -76,9 +76,9 @@
     position: absolute;
     top: 1rem;
     right: 1rem;
-    background: var(--color-toolbar-bg);
+    background: var(--color-elem-primary--glass);
     border-radius: 0.75rem;
-    border: 1px solid var(--color-toolbar-border);
+    border: 1px solid var(--color-border-primary--glass);
     padding: 0.375rem;
     padding-left: 0.75rem;
   }
@@ -129,7 +129,7 @@
 
   .repoToolbar:hover .externalButton {
     padding-left: 0.625rem;
-    background: var(--color-chip-bg);
+    background: var(--color-elem-primary);
   }
 
   .privateRepo {

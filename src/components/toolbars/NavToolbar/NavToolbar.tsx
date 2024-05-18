@@ -112,9 +112,10 @@ const NavToolbar = ({ isOpen, handleToggleModal }: NavToolbarProps) => {
               <Image
                 src={'/icons/icon-email.svg'}
                 alt="icon of an '@' symbol."
-                width={18}
-                height={16}
+                width={20}
+                height={18}
                 className={theme === 'dark' ? 'icon-dark' : 'icon-light'}
+                style={{ paddingBottom: '2px' }}
               />
             </button>
           </li>

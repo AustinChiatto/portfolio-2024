@@ -16,7 +16,7 @@ const HomeContent = ({ commitData }: { commitData: Array<CommitDataProps> }) => 
 
   const paragraphs = `utilizing the JavaScript ecosystem to create efficient and intuitive ways to interact with data in a browser.
     I am driven by curiosity, enjoy solving problems, and love engaging with projects that teach me something new.
-    I'm currently a junior front-end developer at Forge and Smith, and I've been implementing new features to my spaceflight tracker, Apogee, in my spare time.
+    I currently work at Forge and Smith as a Jr Front-End Developer, and in my spare time I've been implementing new features in Apogee, a spaceflight tracker.
     I live on the rainy west coast of Canada, where you can find me immersed in a project, tinkering with retro games, or hanging out with my cat, Max.
     I would love to start a conversation.`;
 

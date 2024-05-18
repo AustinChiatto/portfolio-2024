@@ -13,8 +13,8 @@
 
 .toolbar,
 .toolbarModal {
-  border: 1px solid var(--color-toolbar-border);
-  background: var(--color-toolbar-bg);
+  border: 1px solid var(--color-border-primary--glass);
+  background: var(--color-elem-primary--glass);
   backdrop-filter: blur(24px);
 }
 
@@ -34,7 +34,7 @@
 
 .divider,
 .dividerVertical {
-  background: var(--color-toolbar-border);
+  background: var(--color-border-primary--glass);
 }
 
 .divider {
@@ -84,6 +84,7 @@ ul li:nth-of-type(2) .toolbarAction {
   width: 1rem;
   aspect-ratio: 1/1;
   background: var(--color-text-primary);
+  box-shadow: inset 0px 0.5px 1px 0px rgba(0, 0, 0, 0.5);
   border-radius: 50%;
 }
 
@@ -137,5 +138,5 @@ ul li:nth-of-type(2) .toolbarAction {
 
 .contactLink:hover {
   text-decoration: none;
-  background: var(--color-toolbar-hover);
+  background: var(--color-elem-secondary--glass);
 }
