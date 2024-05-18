@@ -1,15 +1,15 @@
 import { ReactEventHandler, useEffect, useState } from 'react';
-import styles from './toolbar.module.css';
+import styles from './nav-toolbar.module.css';
 import Image from 'next/image';
 import { useTheme } from '@/context/ThemeContext';
 import { contactData } from '@/data/contact-data';
 
-type ToolbarProps = {
+type NavToolbarProps = {
   isOpen: boolean;
   handleToggleModal: ReactEventHandler;
 };
 
-const Toolbar = ({ isOpen, handleToggleModal }: ToolbarProps) => {
+const NavToolbar = ({ isOpen, handleToggleModal }: NavToolbarProps) => {
   const [isActionOpen, setIsActionOpen] = useState(false);
   const { toggleTheme, theme } = useTheme();
   const [contactHeader, setContactHeader] = useState(['Contact Me']);
@@ -30,7 +30,7 @@ const Toolbar = ({ isOpen, handleToggleModal }: ToolbarProps) => {
     }, 100);
   };
 
-  const handleToolbarClick = () => {
+  const handleNavToolbarClick = () => {
     setIsActionOpen(!isActionOpen);
   };
 
@@ -105,7 +105,7 @@ const Toolbar = ({ isOpen, handleToggleModal }: ToolbarProps) => {
             <button
               role="button"
               onMouseOver={handleMouseOver}
-              onClick={handleToolbarClick}
+              onClick={handleNavToolbarClick}
               onMouseOut={handleMouseOut}
               className={styles.toolbarAction}
             >
@@ -133,4 +133,4 @@ const Toolbar = ({ isOpen, handleToggleModal }: ToolbarProps) => {
   );
 };
 
-export default Toolbar;
+export default NavToolbar;

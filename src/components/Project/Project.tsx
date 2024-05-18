@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import styles from './project.module.css';
 import { projectProps } from '@/data/project-data';
+import Chip from '../Chip/Chip';
 
 const Project = ({
   projectName,
@@ -9,7 +10,8 @@ const Project = ({
   projectUrl,
   projectRepoUrl,
   projectImageUrl,
-  projectImageAlt
+  projectImageAlt,
+  projectCommit
 }: projectProps) => {
   return (
     <li className={styles.project}>
@@ -19,23 +21,40 @@ const Project = ({
         <ul className={styles.projectStack}>
           {projectStack.map((e, i) => {
             return (
-              <li
+              <Chip
                 key={i}
-                className={styles.chip}
-              >
-                {e}
-              </li>
+                label={e}
+              />
             );
           })}
         </ul>
       </div>
-      <div className={styles.container}>
-        <a
-          href={projectRepoUrl}
-          className={styles.repoChip}
-        >
-          Code
-        </a>
+      <div className={styles.projectContainer}>
+        {projectCommit ? (
+          <a
+            href={projectRepoUrl}
+            target="_blank"
+            className={styles.repoToolbar}
+          >
+            <div className={styles.commit}>
+              <Image
+                src={'/icons/icon-commit.svg'}
+                alt="GitHub symbol for a commit."
+                width={18}
+                height={18}
+                className={styles.commitIcon}
+              />
+              <div className={styles.commitDetails}>
+                <span className={styles.commitHash}>{projectCommit?.sha}</span>
+                <span className={styles.commitDate}> &middot; {projectCommit?.date}</span>
+              </div>
+            </div>
+
+            <div className={styles.externalButton}>Repo</div>
+          </a>
+        ) : (
+          <span className={styles.privateRepo}>Private</span>
+        )}
         <a href={projectUrl}>
           <div className={styles.projectMedia}>
             <Image

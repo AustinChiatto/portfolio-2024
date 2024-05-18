@@ -1,0 +1,52 @@
+.landing {
+  margin-inline: 1.5rem;
+}
+
+.landingContentWrapper {
+  width: 100%;
+  max-width: 100%;
+  margin-inline: auto;
+}
+
+.landingBanner {
+  margin-block: 4rem 6rem;
+}
+
+.landingContent {
+  padding-bottom: 20lvh;
+}
+
+.landingContent > p + p {
+  margin-top: 4rem;
+}
+
+@media screen and (min-width: 768px) {
+  .landingContentWrapper {
+    width: 100%;
+    max-width: 32rem;
+  }
+
+  .landingContent > p + p {
+    margin-top: 6rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .landing {
+    margin-block: 0 6rem;
+  }
+
+  .landingContentWrapper {
+    max-width: 48rem;
+  }
+
+  .landingBanner {
+    margin-block: 10rem 8rem;
+  }
+}
+
+@media screen and (min-width: 1540px) {
+  .landingContentWrapper {
+    max-width: 54rem;
+  }
+}
