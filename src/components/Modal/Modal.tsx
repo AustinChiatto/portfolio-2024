@@ -28,7 +28,8 @@ const Modal = ({ isOpen, commitData }: modalProps) => {
                   projectRole={project.projectRole}
                   projectUrl={project.projectUrl}
                   projectRepoUrl={project.projectRepoUrl}
-                  projectImageUrl={project.projectImageUrl}
+                  projectImageSrc={project.projectImageSrc}
+                  projectImageDarkSrc={project.projectImageDarkSrc}
                   projectImageAlt={project.projectImageAlt}
                   projectImageBase64={project.projectImageBase64}
                   projectCommit={projectCommit}

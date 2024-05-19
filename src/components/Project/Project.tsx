@@ -2,6 +2,10 @@ import Image from 'next/image';
 import styles from './project.module.css';
 import { projectProps } from '@/data/project-data';
 import Chip from '../Chip/Chip';
+import { useTheme } from '@/context/ThemeContext';
+
+const lerp = (currentValue: number, targetValue: number, weight: number) =>
+  (1 - weight) * currentValue + weight * targetValue;
 
 const Project = ({
   projectName,
@@ -9,10 +13,17 @@ const Project = ({
   projectStack,
   projectUrl,
   projectRepoUrl,
-  projectImageUrl,
+  projectImageSrc,
+  projectImageDarkSrc,
   projectImageAlt,
   projectCommit
 }: projectProps) => {
+  const { theme } = useTheme();
+  let projectImage = projectImageSrc;
+  if (theme === 'dark' && projectImageDarkSrc) {
+    projectImage = projectImageDarkSrc;
+  }
+
   return (
     <li className={styles.project}>
       <div className={styles.projectOverview}>
@@ -58,7 +69,7 @@ const Project = ({
         <a href={projectUrl}>
           <div className={styles.projectMedia}>
             <Image
-              src={projectImageUrl}
+              src={projectImage}
               alt={projectImageAlt}
               sizes="33vw"
               fill

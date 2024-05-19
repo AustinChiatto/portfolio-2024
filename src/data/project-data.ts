@@ -7,7 +7,8 @@ export type projectProps = {
   projectRole: string;
   projectUrl: string;
   projectRepoUrl?: string;
-  projectImageUrl: string;
+  projectImageSrc: string;
+  projectImageDarkSrc: string;
   projectImageAlt: string;
   projectImageBase64: string;
   projectCommit: CommitDataProps | undefined | null;
@@ -30,11 +31,12 @@ export const projects = [
     projectRole: 'Design & Development',
     projectUrl: 'https://apogee-spaceflight-tracker.vercel.app/',
     projectRepoUrl: 'https://github.com/AustinChiatto/apogee-spaceflight-tracker',
-    projectImageUrl: '/images/project-image-apogee.png',
+    repoIdentifier: 'apogee',
+    projectImageSrc: '/images/apogee-thumb.png',
+    projectImageDarkSrc: '/images/apogee-thumb--dark.png',
     projectImageAlt:
       'Picture of the Apogee website, displaying a grid of rocket images for upcoming launches',
-    projectImageBase64: 'string',
-    repoIdentifier: 'apogee'
+    projectImageBase64: 'string'
   },
   {
     projectName: 'Market Maestro',
@@ -44,7 +46,8 @@ export const projects = [
     projectStack: ['Next.js', 'TypeScript', 'Material-UI', 'Vercel'],
     projectRole: 'Front-End Developer',
     projectUrl: 'https://www.marketmaestro.ca',
-    projectImageUrl: '/images/project-image-market-maestro.png',
+    projectImageSrc: '/images/market-maestro-thumb--dark.png',
+    projectImageDarkSrc: '/images/market-maestro-thumb--dark.png',
     projectImageAlt: 'string',
     projectImageBase64: 'string'
   },
@@ -55,10 +58,11 @@ export const projects = [
     projectRole: 'Design & Development',
     projectUrl: 'https://crumb.so/code-to-img',
     projectRepoUrl: 'https://github.com/AustinChiatto/crumb',
-    projectImageUrl: '/images/project-image-code2image.png',
+    repoIdentifier: 'crumb',
+    projectImageSrc: '/images/code2image-thumb.png',
+    projectImageDarkSrc: '/images/code2image-thumb--dark.png',
     projectImageAlt: 'string',
-    projectImageBase64: 'string',
-    repoIdentifier: 'crumb'
+    projectImageBase64: 'string'
   },
   {
     projectName: 'CSS Grid Tool',
@@ -67,10 +71,11 @@ export const projects = [
     projectRole: 'Design & Development',
     projectUrl: 'https://crumb.so/grid-tool',
     projectRepoUrl: 'https://github.com/AustinChiatto/crumb',
-    projectImageUrl: '/images/project-image-grid-tool.png',
+    repoIdentifier: 'crumb',
+    projectImageSrc: '/images/grid-tool-thumb.png',
+    projectImageDarkSrc: '/images/grid-tool-thumb--dark.png',
     projectImageAlt: 'string',
-    projectImageBase64: 'string',
-    repoIdentifier: 'crumb'
+    projectImageBase64: 'string'
   },
   {
     projectName: 'Asteroid Run',
@@ -79,9 +84,10 @@ export const projects = [
     projectRole: 'Design & Development',
     projectUrl: 'https://asteroidrun.crumb.so/',
     projectRepoUrl: 'https://github.com/AustinChiatto/asteroid-run-2.0.0',
-    projectImageUrl: '/images/project-image-asteroid-run.png',
+    repoIdentifier: 'asteroid',
+    projectImageSrc: '/images/asteroid-run-thumb.png',
+    projectImageDarkSrc: '/images/asteroid-run-thumb.png',
     projectImageAlt: 'string',
-    projectImageBase64: 'string',
-    repoIdentifier: 'asteroid'
+    projectImageBase64: 'string'
   }
 ];
