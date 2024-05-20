@@ -13,16 +13,10 @@ const Project = ({
   projectStack,
   projectUrl,
   projectRepoUrl,
-  projectImageSrc,
-  projectImageDarkSrc,
-  projectImageAlt,
+  projectImageData,
   projectCommit
 }: projectProps) => {
   const { theme } = useTheme();
-  let projectImage = projectImageSrc;
-  if (theme === 'dark' && projectImageDarkSrc) {
-    projectImage = projectImageDarkSrc;
-  }
 
   return (
     <li className={styles.project}>
@@ -69,10 +63,12 @@ const Project = ({
         <a href={projectUrl}>
           <div className={styles.projectMedia}>
             <Image
-              src={projectImage}
-              alt={projectImageAlt}
+              src={theme === 'dark' ? projectImageData.darkSrc : projectImageData.lightSrc}
+              alt={projectImageData.alt}
               sizes="33vw"
               fill
+              placeholder="blur"
+              blurDataURL={theme === 'dark' ? projectImageData.dark64 : projectImageData.light64}
               style={{ objectFit: 'cover' }}
             />
           </div>
