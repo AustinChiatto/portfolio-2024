@@ -34,13 +34,12 @@
   overflow: hidden;
   border-radius: var(--border-radius-md);
   border: 0.125rem solid var(--color-border-primary--glass);
-  box-shadow: var(--box-shadow-sm);
+  box-shadow: var(--box-shadow-lg);
   transition: all 400ms var(--transition-bounce);
 }
 
 .projectMedia:hover {
   scale: 1.0125;
-  box-shadow: var(--box-shadow-lg);
 }
 
 /* Contextual Toolbar */
