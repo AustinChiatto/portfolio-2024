@@ -39,8 +39,7 @@
 }
 
 .projectMedia:hover {
-  rotate: 2deg;
-  box-shadow: var(--box-shadow-lg--rotate);
+  scale: 1.01;
 }
 
 /* Contextual Toolbar */
