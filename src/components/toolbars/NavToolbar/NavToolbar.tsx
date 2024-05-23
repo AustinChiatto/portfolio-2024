@@ -94,7 +94,7 @@ const NavToolbar = ({ isOpen, handleToggleModal }: NavToolbarProps) => {
       <div className={styles.toolbar}>
         <button
           role="button"
-          onClick={handleToggleModal}
+          onMouseDown={handleToggleModal}
           className={styles.toolbarText}
         >
           {isOpen ? 'Close' : 'Work'}
@@ -105,13 +105,13 @@ const NavToolbar = ({ isOpen, handleToggleModal }: NavToolbarProps) => {
             <button
               role="button"
               onMouseOver={handleMouseOver}
-              onClick={handleNavToolbarClick}
+              onMouseDown={handleNavToolbarClick}
               onMouseOut={handleMouseOut}
               className={styles.toolbarAction}
             >
               <Image
                 src={'/icons/icon-email.svg'}
-                alt="icon of an '@' symbol."
+                alt="icon of an letter."
                 width={20}
                 height={18}
                 className={theme === 'dark' ? 'icon-dark' : 'icon-light'}
@@ -123,7 +123,7 @@ const NavToolbar = ({ isOpen, handleToggleModal }: NavToolbarProps) => {
             <button
               role="button"
               className={styles.toolbarAction}
-              onClick={toggleTheme}
+              onMouseDown={toggleTheme}
             >
               <div className={styles.themeSwitcher}></div>
             </button>

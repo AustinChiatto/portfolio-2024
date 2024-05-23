@@ -65,7 +65,7 @@ const TextWithScrollFade = ({
                   style={{
                     opacity,
                     top,
-                    transition: 'opacity 0.5s ease, top 0.25s linear',
+                    transition: 'opacity 0.5s ease, top 0.25s cubic-bezier(0,.71,.56,.99)',
                     position: 'relative',
                     textWrap: 'pretty'
                   }}
